@@ -1,0 +1,561 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+  <category>
+    <pattern>*</pattern>
+    <template>I have no answer for that.</template>
+  </category>
+
+<!-- HELLO -->
+<category>
+  <pattern>HELLO</pattern>
+  <template>
+      <random>
+        <li>
+          Hello, I am here to help you explore computing careers. You may start by telling me one of your strengths or preferences regarding computing skills, and I may suggest a career that matches your skill.
+        </li>
+        <li>
+          Hi there! I can provide information on various computing careers. Feel free to share your strengths  or preferences regarding computing skills, and I can recommend a suitable career for you.
+        </li>
+        <li>
+          Hello! I'm here to assist you in discovering computing careers. Let me know your strengths or preferences regarding computing skills, and I can suggest a career that aligns with your skills.
+        </li>
+      </random>
+        <br />Feel free to also, at any time, ask about any of the listed jobs or inquire about their responsibilities, skills required, or salary.<br />
+          1. Software Developer<br />
+          2. Data Scientist<br />
+          3. Cybersecurity Analyst<br />
+          4. Network Engineer<br />
+          5. Web Developer<br />
+  </template>
+</category>
+<!--ALTERNATIVES HELLO-->
+<category>
+  <pattern>HELLO CAN YOU HELP ME</pattern>
+  <template><srai>HELLO</srai></template>
+</category>
+<category>
+  <pattern>CAN YOU HELP ME</pattern>
+  <template><srai>HELLO</srai></template>
+</category>
+<category>
+  <pattern>HELLO CAN YOU HELP ME FIND A CAREER</pattern>
+  <template><srai>HELLO</srai></template>
+</category>
+<category>
+  <pattern>CAN YOU HELP ME FIND A CAREER</pattern>
+  <template><srai>HELLO</srai></template>
+</category>
+<category>
+  <pattern>I WANT TO FIND A CAREER</pattern>
+  <template><srai>HELLO</srai></template>
+</category>
+<category>
+  <pattern>HELP ME FIND A CAREER</pattern>
+  <template><srai>HELLO</srai></template>
+</category>
+<category>
+  <pattern>HELP ME</pattern>
+  <template><srai>HELLO</srai></template>
+</category>
+    
+<!-- PREFERENCE -->
+<category> 
+  <pattern>PREFERENCE *</pattern> 
+  <template>
+      <think><set name="preference"><star/></set></think>
+      <condition name="preference">
+        <li value="PROGRAMMING">
+          That's great! Programming skills are valuable in many computing roles. Based on that, I recommend exploring roles like Software Developer or Data Scientist. 
+        </li>
+        <li value="PROBLEM SOLVING">
+          Problem-solving is a great skill! You might be interested in roles like Software Developer or Cybersecurity Analyst. 
+        </li>
+        <li value="SOLVING PROBLEMS">
+          Solving problems is a valuable skill! You might enjoy roles like Software Developer or Cybersecurity Analyst.
+        </li>
+        <li value="NETWORKING">
+          Networking is a valuable skill! You might be interested in becoming a Network Engineer or Cybersecurity Analyst.
+        </li>
+        <li value="DATA ANALYSIS">
+          If you're good at data analysis, consider roles like Data Scientist.
+        </li>
+        <li value="WEB DESIGN">
+          Web design skills are perfect for a Web Developer. 
+        </li>
+        <li value="CODING">
+          Coding skills are essential in many computing roles. You might enjoy exploring Software Developer or Data Scientist positions. 
+        </li>
+        <li value="NETWORK SECURITY">
+          Network security skills are crucial in roles like Cybersecurity Analyst or Network Engineer. 
+        </li>
+        <li value="DATA MANAGEMENT">
+          Data management skills are valuable in roles like Data Scientist.
+        </li>
+        <li value="MATH">
+          Math skills are beneficial in computing careers like Data Scientist or Software Developer.
+        </li>
+        <li value="DATA STRUCTURES">
+          Data structures knowledge is essential in roles like Software Developer or Data Scientist. 
+        </li>
+        <li value="ALGORITHMS">
+          Algorithm skills are crucial in computing roles like Software Developer or Data Scientist. 
+        </li>
+        <li value="STATISTICS">
+          Statistics skills are valuable with Data Scientists.
+        </li>
+
+        <li>Not sure what you mean by <get name="preference"/>. 
+          Are you good at programming, problem solving, networking, data analysis, or web design?
+        </li>
+        Please let me know if you'd like more information on these careers.
+    </condition>
+  </template>
+</category>
+<!-- ALTERNATIVE PREFERENCE -->
+<category>
+  <pattern>I AM GOOD AT *</pattern>
+  <template><srai>PREFERENCE <star/></srai></template>
+</category>
+<category>
+  <pattern>I'M GOOD AT *</pattern>
+  <template><srai>PREFERENCE <star/></srai></template>
+</category>
+<category>
+  <pattern>I'M ALSO GOOD AT *</pattern>
+  <template><srai>PREFERENCE <star/></srai></template>
+</category>
+<category>
+  <pattern>I AM SKILLED IN *</pattern>
+  <template><srai>PREFERENCE <star/></srai></template>
+</category>
+<category>
+  <pattern>I AM SKILLED IN * WHAT JOB SHOULD I CONSIDER</pattern>
+  <template><srai>PREFERENCE <star/></srai></template>
+</category>
+<category>
+  <pattern>I AM SKILLED IN * WHAT JOB DO YOU RECOMMEND</pattern>
+  <template><srai>PREFERENCE <star/></srai></template>
+</category>
+<category>
+  <pattern>I AM ALSO SKILLED IN *</pattern>
+  <template><srai>PREFERENCE <star/></srai></template>
+</category>ARE THE 
+<category>
+  <pattern>I HAVE EXPERTISE IN *</pattern>
+  <template><srai>PREFERENCE <star/></srai></template>
+</category>
+<category>
+  <pattern>I ALSO HAVE EXPERTISE IN *</pattern>
+  <template><srai>PREFERENCE <star/></srai></template>
+</category>
+<category>
+  <pattern>I LIKE *</pattern>
+  <template><srai>PREFERENCE <star/></srai></template>
+</category>
+<category>
+  <pattern>I ENJOY *</pattern>
+  <template><srai>PREFERENCE <star/></srai></template>
+</category>
+
+
+
+<!-- GENERAL INTRO JOB -->
+<category>
+  <pattern>GENERAL INTRO *</pattern>
+  <template>
+    <think><set name="job"><star/></set></think>
+    <condition name="job">
+      <li value="SOFTWARE DEVELOPER">
+        A Software Developer builds applications and solves problems through coding. Would you like to know about the responsibilities, skills required, or career growth opportunities?
+      </li>
+      <li value="SOFTWARE DEVELOPERS">
+        Software Developers build applications and solve problems through coding. Would you like to know about the responsibilities, skills required, or career growth opportunities?
+      </li>
+      <li value="DATA SCIENTIST">
+        A Data Scientist analyzes data, develops algorithms, and works with machine learning models. Would you like to know more about the responsibilities, skills required, or career growth opportunities?
+      </li>
+      <li value="DATA SCIENTISTS">
+        Data Scientists analyze data, develop algorithms, and work with machine learning models. Would you like to know more about the responsibilities, skills required, or career growth opportunities?
+      </li>
+      <li value="CYBERSECURITY ANALYST">
+        A Cybersecurity Analyst focuses on protecting systems, analyzing risks, and managing vulnerabilities. Would you like to know more about the responsibilities, skills required, or career growth opportunities?
+      </li>
+      <li value="CYBERSECURITY ANALYSTS">
+        Cybersecurity Analysts focus on protecting systems, analyzing risks, and managing vulnerabilities. Would you like to know more about the responsibilities, skills required, or career growth opportunities?
+      </li>
+      <li value="NETWORK ENGINEER">
+        A Network Engineer sets up networks, troubleshoots issues, and manages connections. Would you like to know more about the responsibilities, skills required, or career growth opportunities?
+      </li>
+      <li value="NETWORK ENGINEERS">
+        Network Engineers set up networks, troubleshoot issues, and manage connections. Would you like to know more about the responsibilities, skills required, or career growth opportunities?
+      </li>
+      <li value="WEB DEVELOPER">
+        A Web Developer designs websites, develops user interfaces, and works with HTML, CSS, and JavaScript. Would you like to know more about the responsibilities, skills required, or career growth opportunities?
+      </li>
+      <li value="WEB DEVELOPERS">
+        Web Developers design websites, develop user interfaces, and work with HTML, CSS, and JavaScript. Would you like to know more about the responsibilities, skills required, or career growth opportunities?
+      </li>
+      <li>Not sure what you mean by <get name="job"/>.
+      </li>
+    </condition>
+  </template>
+</category>
+<!-- ALTERNATIVES GENERAL INTRO *-->
+<category>
+  <pattern>HOW ABOUT *</pattern>
+  <template><srai>GENERAL INTRO <star/></srai></template>
+</category>
+<category>
+  <pattern>I WOULD LIKE TO KNOW ABOUT *</pattern>
+  <template><srai>GENERAL INTRO <star/></srai></template>
+</category>
+<category>
+  <pattern>I WOULD LIKE TO KNOW MORE ABOUT *</pattern>
+  <template><srai>GENERAL INTRO <star/></srai></template>
+</category>
+<category>
+  <pattern>TELL ME ABOUT *</pattern>
+  <template><srai>GENERAL INTRO <star/></srai></template>
+</category>
+<category>
+  <pattern>TELL ME MORE ABOUT *</pattern>
+  <template><srai>GENERAL INTRO <star/></srai></template>
+</category>
+<category>
+  <pattern>I WOULD LIKE TO LEARN MORE ABOUT *</pattern>
+  <template><srai>GENERAL INTRO <star/></srai></template>
+</category>
+<category>
+  <pattern>INFORM ME ABOUT *</pattern>
+  <template><srai>GENERAL INTRO <star/></srai></template>
+</category>
+
+
+<!-- JOB SKILLS -->
+<category>
+  <pattern>SKILLS *</pattern>
+  <template>
+    <think><set name="job"><star/></set></think>
+    <condition name="job">
+      <li value="SOFTWARE DEVELOPER">
+        To become a Software Developer, you need skills in programming languages like Python, Java, and C++. You should also be strong in problem-solving, debugging, and using tools like Git and IDEs.
+      </li>
+      <li value="SOFTWARE DEVELOPERS">
+        To become a Software Developer, you need skills in programming languages like Python, Java, and C++. You should also be strong in problem-solving, debugging, and using tools like Git and IDEs.
+      </li>
+      <li value="DATA SCIENTIST">
+        To become a Data Scientist, you need skills in data analysis, statistics, machine learning, and programming languages like R and Python. You should also be proficient in data visualization and working with big data.
+      </li>
+      <li value="DATA SCIENTISTS">
+        To become a Data Scientist, you need skills in data analysis, statistics, machine learning, and programming languages like R and Python. You should also be proficient in data visualization and working with big data.
+      </li>
+      <li value="CYBERSECURITY ANALYST">
+        To become a Cybersecurity Analyst, you need skills in network security, risk assessment, incident response, and knowledge of cybersecurity tools and technologies. You should also be familiar with compliance and regulatory requirements.
+      </li>
+      <li value="CYBERSECURITY ANALYSTS">
+        To become a Cybersecurity Analyst, you need skills in network security, risk assessment, incident response, and knowledge of cybersecurity tools and technologies. You should also be familiar with compliance and regulatory requirements.
+      </li>
+      <li value="NETWORK ENGINEER">
+        To become a Network Engineer, you need skills in network design, troubleshooting, security, and knowledge of networking protocols. You should also be proficient in configuring routers, switches, and firewalls.
+      </li>
+      <li value="NETWORK ENGINEERS">
+        To become a Network Engineer, you need skills in network design, troubleshooting, security, and knowledge of networking protocols. You should also be proficient in configuring routers, switches, and firewalls.
+      </li>
+      <li value="WEB DEVELOPER">
+        To become a Web Developer, you need skills in web design, front-end development, and knowledge of HTML, CSS, and JavaScript. You should also be familiar with responsive design, web frameworks, and version control systems.
+      </li>
+      <li value="WEB DEVELOPERS">
+        To become a Web Developer, you need skills in web design, front-end development, and knowledge of HTML, CSS, and JavaScript. You should also be familiar with responsive design, web frameworks, and version control systems.
+      </li>
+      <li>Not sure what you mean by <get name="job"/>.
+      </li>
+    </condition>
+  </template>
+</category>
+<!--ALTERNATIVES SKILLS-->
+<category>
+  <pattern>WHAT SKILLS ARE REQUIRED FOR A *</pattern>
+  <template><srai>SKILLS <star/></srai></template>
+</category>
+<category>
+  <pattern>WHAT SKILLS ARE THE REQUIRED FOR A *</pattern>
+  <template><srai>SKILLS <star/></srai></template>
+</category>
+<category>
+  <pattern>WHAT ARE THE SKILLS REQUIRED FOR A *</pattern>
+  <template><srai>SKILLS <star/></srai></template>
+</category>
+<category>
+  <pattern>WHAT SKILLS DO I NEED TO BE A *</pattern>
+  <template><srai>SKILLS <star/></srai></template>
+</category>
+<category>
+  <pattern>WHAT SKILLS DO I NEED FOR A *</pattern>
+  <template><srai>SKILLS <star/></srai></template>
+</category>
+<category>
+  <pattern>WHAT SKILLS ARE NEEDED FOR A *</pattern>
+  <template><srai>SKILLS <star/></srai></template>
+</category>
+<category>
+  <pattern>WHAT SKILLS SHOULD I HAVE TO BE A *</pattern>
+  <template><srai>SKILLS <star/></srai></template>
+</category>
+<category>
+  <pattern>WHAT SKILLS SHOULD I DEVELOP TO BE A *</pattern>
+  <template><srai>SKILLS <star/></srai></template>
+</category>
+
+
+<!-- JOB RESPONSIBILITIES -->
+<category>
+  <pattern>JOB RESPONSIBILITIES *</pattern>
+  <template>
+    <think><set name="job"><star/></set></think>
+    <condition name="job">     
+      <li value="SOFTWARE DEVELOPER">
+        A Software Developer is responsible for designing, coding, testing, and maintaining software applications. They collaborate with other team members to create efficient, scalable solutions.
+      </li>
+      <li value="SOFTWARE DEVELOPERS">
+        Software Developers are responsible for designing, coding, testing, and maintaining software applications. They collaborate with other team members to create efficient, scalable solutions.
+      </li>
+      <li value="DATA SCIENTIST">
+        A Data Scientist analyzes data, develops algorithms, and works with machine learning models to derive insights and make data-driven decisions.
+      </li>
+      <li value="DATA SCIENTISTS">
+        Data Scientists analyze data, develop algorithms, and work with machine learning models to derive insights and make data-driven decisions.
+      </li>
+      <li value="CYBERSECURITY ANALYST">
+        A Cybersecurity Analyst focuses on protecting systems, analyzing risks, and managing vulnerabilities to ensure data security and privacy.
+      </li>
+      <li value="CYBERSECURITY ANALYSTS">
+        Cybersecurity Analysts focus on protecting systems, analyzing risks, and managing vulnerabilities to ensure data security and privacy.
+      </li>
+      <li value="NETWORK ENGINEER">
+        A Network Engineer sets up networks, troubleshoots issues, and manages connections to ensure smooth and secure data transmission.
+      </li>
+      <li value="NETWORK ENGINEERS">
+        Network Engineers set up networks, troubleshoot issues, and manage connections to ensure smooth and secure data transmission.
+      </li>
+      <li value="WEB DEVELOPER">
+        A Web Developer designs websites, develops user interfaces, and works with HTML, CSS, and JavaScript to create engaging online experiences.
+      </li>
+      <li value="WEB DEVELOPERS">
+        Web Developers design websites, develop user interfaces, and work with HTML, CSS, and JavaScript to create engaging online experiences.
+      </li> 
+      <li>Not sure what you mean by <get name="job"/>.
+      </li>
+    </condition>
+  </template>
+</category>
+<!-- ALTERNATIVES RESPONSIBILITES  -->
+<category>
+<pattern>WHAT RESPONSIBILITIES DOES A * HAVE</pattern>
+  <template><srai>JOB RESPONSIBILITIES <star/></srai></template>
+</category>
+<category>
+  <pattern>WHAT IS A * RESPONSIBLE FOR</pattern>
+  <template><srai>JOB RESPONSIBILITIES <star/></srai></template>
+</category>
+<category>
+  <pattern>WHAT DOES A * DO</pattern>
+  <template><srai>JOB RESPONSIBILITIES <star/></srai></template>
+</category>
+<category>
+  <pattern>WHAT DO * DO</pattern>
+  <template><srai>JOB RESPONSIBILITIES <star/></srai></template>
+</category>
+<category>
+  <pattern>WHAT ARE THE RESPONSIBILITIES OF A *</pattern>
+  <template><srai>JOB RESPONSIBILITIES <star/></srai></template>
+</category>
+<category>
+  <pattern>WHAT ARE THE DUTIES OF A *</pattern>
+  <template><srai>JOB RESPONSIBILITIES <star/></srai></template>
+</category>
+<category>
+  <pattern>WHAT ARE THE TASKS OF A *</pattern>
+  <template><srai>JOB RESPONSIBILITIES <star/></srai></template>
+</category>
+
+<!-- SALARY -->
+<category>
+  <pattern>SALARY *</pattern>
+  <template>
+    <think><set name="job"><star/></set></think>
+    <condition name="job">
+      <li value="SOFTWARE DEVELOPER">
+        The salary of a Software Developer can vary depending on factors such as experience, location, and company size. On average, Software Developers earn a competitive salary ranging from $60,000 to $120,000 per year.
+      </li>
+      <li value="SOFTWARE DEVELOPERS">
+        The salary of Software Developers can vary depending on factors such as experience, location, and company size. On average, Software Developers earn a competitive salary ranging from $60,000 to $120,000 per year.
+      </li>
+      <li value="DATA SCIENTIST">
+        The salary of a Data Scientist can vary depending on factors such as experience, location, and industry. On average, Data Scientists earn a competitive salary ranging from $80,000 to $150,000 per year.
+      </li>
+      <li value="DATA SCIENTISTS">
+        The salary of Data Scientists can vary depending on factors such as experience, location, and industry. On average, Data Scientists earn a competitive salary ranging from $80,000 to $150,000 per year.
+      </li>
+      <li value="CYBERSECURITY ANALYST">
+        The salary of a Cybersecurity Analyst can vary depending on factors such as experience, location, and industry. On average, Cybersecurity Analysts earn a competitive salary ranging from $70,000 to $120,000 per year.
+      </li>
+      <li value="CYBERSECURITY ANALYSTS">
+        The salary of Cybersecurity Analysts can vary depending on factors such as experience, location, and industry. On average, Cybersecurity Analysts earn a competitive salary ranging from $70,000 to $120,000 per year.
+      </li>
+      <li value="NETWORK ENGINEER">
+        The salary of a Network Engineer can vary depending on factors such as experience, location, and industry. On average, Network Engineers earn a competitive salary ranging from $70,000 to $110,000 per year.
+      </li>
+      <li value="NETWORK ENGINEERS">
+        The salary of Network Engineers can vary depending on factors such as experience, location, and industry. On average, Network Engineers earn a competitive salary ranging from $70,000 to $110,000 per year.
+      </li>
+      <li value="WEB DEVELOPER">
+        The salary of a Web Developer can vary depending on factors such as experience, location, and industry. On average, Web Developers earn a competitive salary ranging from $50,000 to $90,000 per year.
+      </li>
+      <li value="WEB DEVELOPERS">
+        The salary of Web Developers can vary depending on factors such as experience, location, and industry. On average, Web Developers earn a competitive salary ranging from $50,000 to $90,000 per year.
+      </li>
+      <li>Not sure what you mean by <get name="job"/>. 
+      </li>
+    </condition>
+  </template>
+</category>
+<!-- ALTERNATIVES SALARY -->
+<category>
+  <pattern>WHAT IS THE SALARY OF A *</pattern>
+  <template><srai>SALARY <star/></srai></template>
+</category>
+
+
+<category>
+  <pattern>HOW MUCH MONEY DOES A * MAKE</pattern>
+  <template><srai>SALARY <star/></srai></template>
+</category>
+<category>
+  <pattern>HOW MUCH MONEY DO * MAKE</pattern>
+  <template><srai>SALARY <star/></srai></template>
+</category>
+<category>
+  <pattern>HOW MUCH CAN I EARN AS A *</pattern>
+  <template><srai>SALARY <star/></srai></template>
+</category>
+<category>
+  <pattern>WHAT IS THE AVERAGE SALARY OF A *</pattern>
+  <template><srai>SALARY <star/></srai></template>
+</category>
+<category>
+  <pattern>WHAT IS THE PAY FOR A *</pattern>
+  <template><srai>SALARY <star/></srai></template>
+</category>
+
+
+<!--Contextual Prompts (based on the set job var value)-->
+
+<!--WHAT DO THEY DO goes to JOB RESPONSIBILITIES with the current job name-->
+<category>
+  <pattern>WHAT DO THEY DO</pattern>
+  <template><srai>JOB RESPONSIBILITIES <get name="job"/></srai></template>
+</category>
+<category>
+  <pattern>WHAT IS THEIR JOB</pattern>
+  <template><srai>JOB RESPONSIBILITIES <get name="job"/></srai></template>
+</category>
+<category>
+  <pattern>WHAT ARE THEIR RESPONSIBILITIES</pattern>
+  <template><srai>JOB RESPONSIBILITIES <get name="job"/></srai></template>
+</category>
+<category>
+  <pattern>WHAT ARE THEIR DUTIES</pattern>
+  <template><srai>JOB RESPONSIBILITIES <get name="job"/></srai></template>
+</category>
+<category>
+  <pattern>WHAT ARE THEIR TASKS</pattern>
+  <template><srai>JOB RESPONSIBILITIES <get name="job"/></srai></template>
+</category>
+
+<!--WHAT SKILLS DO THEY NEED goes to SKILLS with the current job name-->
+<category>
+  <pattern>WHAT ARE THEIR SKILLS</pattern>
+  <template><srai>SKILLS <get name="job"/></srai></template>
+</category>
+<category>
+  <pattern>WHAT SKILLS DO THEY NEED</pattern>
+  <template><srai>SKILLS <get name="job"/></srai></template>
+</category>
+<category>
+  <pattern>WHAT SKILLS ARE REQUIRED</pattern>
+  <template><srai>SKILLS <get name="job"/></srai></template>
+</category>
+<category>
+  <pattern>WHAT ARE THE SKILLS REQUIRED</pattern>
+  <template><srai>SKILLS <get name="job"/></srai></template>
+</category>
+<category>
+  <pattern>WHAT SKILLS ARE NEEDED</pattern>
+  <template><srai>SKILLS <get name="job"/></srai></template>
+</category>
+<category>
+  <pattern>WHAT SKILLS SHOULD THEY HAVE</pattern>
+  <template><srai>SKILLS <get name="job"/></srai></template>
+</category>
+
+<!--WHAT IS THE SALARY goes to SALARY with the current job name-->
+<category>
+  <pattern>HOW MUCH MONEY DO THEY MAKE</pattern>
+  <template><srai>SALARY <get name="job"/></srai></template>
+</category>
+<category>
+  <pattern>WHAT IS THE SALARY</pattern>
+  <template><srai>SALARY <get name="job"/></srai></template>
+</category>
+<category>
+  <pattern>WHAT IS THEIR SALARY</pattern>
+  <template><srai>SALARY <get name="job"/></srai></template>
+</category>
+<category>
+  <pattern>HOW MUCH DO THEY MAKE</pattern>
+  <template><srai>SALARY <get name="job"/></srai></template>
+</category>
+<category>
+  <pattern>HOW MUCH CAN THEY EARN</pattern>
+  <template><srai>SALARY <get name="job"/></srai></template>
+</category>
+<category>
+  <pattern>WHAT IS THE AVERAGE SALARY</pattern>
+  <template><srai>SALARY <get name="job"/></srai></template>
+</category>
+<category>
+  <pattern>WHAT IS THE PAY</pattern>
+  <template><srai>SALARY <get name="job"/></srai></template>
+</category>
+
+<!--GENERAL PROMPTS-->
+<category>
+  <pattern>WHAT IS YOUR NAME</pattern>
+  <template>My name is CareerBot. I'm here to help you explore computing careers. Feel free to ask me about different jobs, their responsibilities, skills required, or salary.</template>
+</category>
+<category>
+  <pattern>WHO ARE YOU</pattern>
+  <template>I am CareerBot, your guide to computing careers. You can ask me about various jobs, their responsibilities, skills required, or salary.</template>
+</category>
+<category>
+  <pattern>WHAT CAN YOU DO</pattern>
+  <template>
+  I can provide information on various computing careers. You can ask me about different jobs, their responsibilities, skills required, or salary. 
+  You may also share with me your strengths or preferences, and I may reference some jobs for you.
+  </template>
+</category>
+<category>
+  <pattern>WHAT DO YOU DO</pattern>
+  <template>I am here to help you explore computing careers. You can ask me about different jobs, their responsibilities, skills required, or salary.</template>
+</category>
+<category>
+  <pattern>WHAT JOBS ARE THERE</pattern>
+  <template>
+    You can explore various computing careers such as Software Developer, Data Scientist, Cybersecurity Analyst, Network Engineer, and Web Developer. 
+    Feel free to ask me about any of these jobs, their responsibilities, skills required, or salary.
+  </template>
+</category>
+
+
+
+</aiml>
